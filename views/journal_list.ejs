@@ -1,0 +1,30 @@
+<body>
+    <main class="journal_list">
+        <section class="sec1 bottom_p">
+            <div class="j_title">
+                <h2>BEST JOURNALS</h2>
+                <span></span>
+                <h2>BY CATEGORIES</h2>
+            </div>
+            <div class="side_p">
+                <div class="journals_wrap">
+                    <% rows.forEach((row,index)=>{%>
+                    <div href="" onclick="javascript:location.href='/journalDetail?num=<%= row.num %>'">
+                        <h5 class="inner_p"><%= row.category %></h5>
+                        <h4 class="inner_p"><%= row.title %></h4>
+                        <div class="j_prefer inner_p"><span class="view">203</span><span class="like">122</span></div>
+                        <div class="j_text inner_p"><p><%= row.subtitle %></p></div>
+                        <div class="j_content">
+                            <div class="j_img"><img src="<%= row.img %>" alt="" /></div>
+                            <div class="j_r">
+                                <div></div>
+                                <div class="hashtag"><span><%= row.hashtag %></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>

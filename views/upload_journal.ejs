@@ -1,0 +1,61 @@
+<body>
+    <main class="write_journal">
+        <section class="side_p">
+            <div class="journals_wrap">
+                <form action="/u_journal" method="post" enctype="multipart/form-data">
+                    <div class="write_table">
+                        <div class="j_title">
+                            <h2>UPLOAD JOURNAL</h2>
+                        </div>
+                        <div>
+                            <div class="title">
+                                <h4 class="inner_p">제목:</h4>
+                                <input type="text" name="title" />
+                            </div>
+                            <div class="writer">
+                                <h4 class="inner_p">작성자:</h4>
+                                <input type="text" name="writer" />
+                            </div>
+                        </div>
+                        <div class="subtitle">
+                            <h4 class="inner_p">부제목:</h4>
+                            <input type="text" name="subtitle" />
+                        </div>
+                        <div>
+                            <div class="category">
+                                <h4 class="inner_p">카테고리:</h4>
+                                <select name="category">
+                                    <option value="">--Please choose an option--</option>
+                                    <option value="TECHNOLOGY">TECHNOLOGY</option>
+                                    <option value="EARTH & MOON">EARTH & MOON</option>
+                                    <option value="PLANET">PLANET</option>
+                                    <option value="SPACE EXPLORATION">SPACE EXPLORATION</option>
+                                    <option value="HISTORY">HISTORY</option>
+                                    <option value="ART & MUSIC">ART & MUSIC</option>
+                                    <option value="MOVIE & BOOK">Spider</option>
+                                </select>
+                            </div>
+                            <div class="password">
+                                <h4 class="inner_p">비밀번호:</h4>
+                                <input type="password" name="password" />
+                            </div>
+                        </div>
+                        <div class="file">
+                            <h4 class="inner_p">첨부파일:</h4>
+                            <input type="file" name="journal_img" />
+                        </div>
+                        <div class="content">
+                            <h4 class="inner_p">내용:</h4>
+                            <textarea name="contents" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="hashtag">
+                            <h4 class="inner_p">해시태그:</h4>
+                            <input type="text" name="hashtag" />
+                        </div>
+                    </div>
+                    <div class="btn"><input type="submit" value="BUTTON" /></div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>

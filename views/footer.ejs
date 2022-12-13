@@ -1,0 +1,149 @@
+<footer>
+    <div class="footer_wrap">
+        <div class="f_logo_wrap footer_p">
+            <div class="f_logo"></div>
+        </div>
+        <div class="f_content">
+            <div class="f_nav">
+                <div class="f_nav1_wrap">
+                    <div class="f_about_us">
+                        <h6 class="dropTitle">ABOUT US</h6>
+                        <div class="sub_cate">
+                            <a href="">
+                                <p>would you like?</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="f_apod">
+                        <h6 class="dropTitle">APOD</h6>
+                        <div class="sub_cate">
+                            <a href="">
+                                <p>APOD이란?</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="f_community">
+                    <h6 class="dropTitle">COMMUNITY</h6>
+                    <div class="sub_cate">
+                        <a href="">
+                            <p>수습기자단 모집</p>
+                        </a>
+                        <a href="">
+                            <p>현장학습</p>
+                        </a>
+                        <a href="">
+                            <p>자유게시판</p>
+                        </a>
+                        <a href="">
+                            <p>구독하기</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="f_journal">
+                    <h6 class="dropTitle">JOURNAL</h6>
+                    <div class="sub_cate">
+                        <div>
+                            <a href="">
+                                <p>음악&미술</p>
+                            </a>
+                            <a href="">
+                                <p>역사</p>
+                            </a>
+                            <a href="">
+                                <p>영화&문화</p>
+                            </a>
+                            <a href="">
+                                <p>별과 성단</p>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <p>외계행성</p>
+                            </a>
+                            <a href="">
+                                <p>은하와 우주</p>
+                            </a>
+                            <a href="">
+                                <p>우주탐사</p>
+                            </a>
+                            <a href="">
+                                <p>인공위성</p>
+                            </a>
+                        </div>
+                        <div class="">
+                            <a href="">
+                                <p>지구와 달</p>
+                            </a>
+                            <a href="">
+                                <p>태양</p>
+                            </a>
+                            <a href="">
+                                <p>행성</p>
+                            </a>
+                            <a href="">
+                                <p>기타</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sns">
+                <h6>FOLLW US</h6>
+                <div class="sns_list">
+                    <ul>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="institutions">
+                <h6>관련기관</h6>
+                <div id="insti_wrap" class="dropTitle">
+                    <div class="sub_cate"></div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright"><p>© Copyright 2013 wouldyoulike</p></div>
+    </div>
+    <script>
+        function accordion() {
+            let dropTitle = document.querySelectorAll(".dropTitle");
+            let sub_cate = document.querySelectorAll(".sub_cate");
+            // let isnti_wrap = document.querySelector('#insti_wrap');
+            for (let i = 0; i < dropTitle.length; i++) {
+                dropTitle[i].addEventListener("click", function (e) {
+                    for (let j = 0; j < sub_cate.length; j++) {
+                        if (i == j) {
+                            sub_cate[j].classList.toggle("accor");
+                        } else {
+                            sub_cate[j].classList.remove("accor");
+                        }
+                    }
+                });
+            }
+
+            // for (let i = 0; i < dropTitle.length; i++) {
+            //     dropTitle[i].addEventListener("click", function (e) {
+            //         for (let j = 0; j < sub_cate.length; j++) {
+            //             sub_cate[j].classList.remove("accor");
+            //         }
+            //         e.currentTarget.classList.add("accor");
+
+            //         // for (let j = 0; j < sub_cate.length; j++) {
+            //         //     if (i == j) {
+            //         //         e.currentTarget.classList.add("accor");
+            //         //     } else {
+            //         //         sub_cate[j].classList.remove("accor");
+            //         //     }
+            //         // }
+            //     });
+            // }
+        }
+        accordion();
+    </script>
+</footer>

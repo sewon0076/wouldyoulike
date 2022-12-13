@@ -1,0 +1,177 @@
+<body>
+    <main class="main">
+        <section class="sec1 side_p">
+            <div class="sec1_wrap">
+                <div class="main_img_wrap">
+                    <div class="main_img"></div>
+                </div>
+                <h3>천문우주 과학 소통을 위해 노력하는 Science Communication 단체 <br />우주라이크[WouldYouLike]에 오신 것을 환영합니다</h3>
+                <a href="about_us.html">
+                    <p>READ MORE</p>
+                    <div>
+                        <div class="btn_r"></div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section class="sec2 bottom_p">
+            <div class="j_title">
+                <h2>BEST JOURNALS</h2>
+                <span></span>
+                <h2>BY CATEGORIES</h2>
+            </div>
+            <div class="side_p">
+                <div class="journals_wrap">
+                    <% for(i=0; i<6; i++){%>
+                    <div href="" onclick="javascript:location.href='/journalDetail?num=<%= rows[i].num %>'">
+                        <h5 class="inner_p"><%= rows[i].category %></h5>
+                        <h4 class="inner_p"><%= rows[i].title %></h4>
+                        <div class="j_prefer inner_p"><span class="view">203</span><span class="like">122</span></div>
+                        <div class="j_text inner_p">
+                            <p><%= rows[i].subtitle %></p>
+                        </div>
+                        <div class="j_content">
+                            <div class="j_img"><img src="<%= rows[i].img %>" alt="" /></div>
+                            <div class="j_r">
+                                <div></div>
+                                <div class="hashtag"><span><%= rows[i].hashtag %></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }; %>
+                </div>
+            </div>
+        </section>
+        <section class="sec3 bottom_p">
+            <div class="timer_wrap">
+                <p>LUNAR ECLIPSE</p>
+                <div class="times_wrap side_p">
+                    <div class="times">
+                        <div>
+                            <span class="days">DAY</span>
+                            <p id="day"></p>
+                        </div>
+                        <div>
+                            <span class="hours">HOUR</span>
+                            <p id="hours"></p>
+                        </div>
+                        <div>
+                            <span class="minutes">MINUTE</span>
+                            <p id="minutes"></p>
+                        </div>
+                        <div>
+                            <span class="seconds">SECOND</span>
+                            <p id="seconds"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sec3 bottom_p">
+            <div class="j_title">
+                <h2>LATEST JOURNALS</h2>
+            </div>
+            <div class="side_p">
+                <div class="journals_wrap">
+                    <% for(i=6; i<12; i++){%>
+                    <div href="" onclick="javascript:location.href='/journalDetail?num=<%= rows[i].num %>'">
+                        <h5 class="inner_p"><%= rows[i].category %></h5>
+                        <h4 class="inner_p"><%= rows[i].title %></h4>
+                        <div class="j_prefer inner_p"><span class="view">203</span><span class="like">122</span></div>
+                        <div class="j_text inner_p">
+                            <p><%= rows[i].subtitle %></p>
+                        </div>
+                        <div class="j_content">
+                            <div class="j_img"><img src="<%= rows[i].img %>" alt="" /></div>
+                            <div class="j_r">
+                                <div></div>
+                                <div class="hashtag"><span><%= rows[i].hashtag %></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }; %>
+                </div>
+            </div>
+        </section>
+        <section class="sec4">
+            <div class="j_title">
+                <h2>APOD</h2>
+            </div>
+            <div class="swiper apod_img">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/apod221106.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="img/apod221105.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="img/apod221104.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="img/apod221103.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="img/apod221004.jpg" alt="" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="sec4_wrap side_p">
+                <div class="sec4_wrap_l">
+                    <a href=""
+                        >WHAT IS APOD?
+                        <div>
+                            <div class="btn_r"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="sec4_wrap_r">
+                    <a href=""
+                        >VIEW MORE APOD
+                        <div>
+                            <div class="btn_r"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="sec5">
+            <div class="sec5_wrap">
+                <h2>WOULD YOU LIKE<br />TO SHARE YOUR KNOWLEDGE?</h2>
+                <p>
+                    제 10기 수습 기자단이 되어 여러분들의 우주를 공유해주세요! <br />우주에 대한 지식을 나누고 싶으신 분들, <br />글 쓰는 것을
+                    좋아하시는 분들 <br />우주라이크의 기자단이 되어주세요!!
+                </p>
+                <div class="submit">제 10기 수습기자단 신청하기</div>
+                <h2 class="delivery">THE UNIVERSE DELIEVERY</h2>
+                <div class="delivery_wrap">
+                    <div class="sec5_img_wrap">
+                        <div class="sec5_img"></div>
+                    </div>
+                    <div class="delivery_content">
+                        <span>우주에 대한 최신 칼럼들을 가장 빠르게 만나보고 싶다면?</span>
+                        <div class="email">
+                            <input type="text" placeholder="E-MAIL" />
+                        </div>
+                        <span>그 달의 우주를 집에서 받아 보고 싶다면?</span>
+                        <div class="submit">SUBSCRIBE</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="JS/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".apod_img", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    });
+</script>

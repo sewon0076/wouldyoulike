@@ -1,0 +1,105 @@
+.write_journal {
+    margin: 0;
+    padding-top: 180px;
+}
+.write_journal .journals_wrap {
+    display: block;
+    margin-top: 50px;
+}
+.write_table {
+    border: 1px solid black;
+    border-bottom: 0px;
+}
+.write_journal .j_title {
+    justify-content: center;
+}
+.write_journal .j_title h2 {
+    width: 100%;
+    text-align: center;
+}
+.write_journal h4 {
+    line-height: 1;
+    border: 0;
+}
+.write_table > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.write_journal .writer,
+.write_journal .password {
+    width: calc(33.3333% - 16.6666px);
+    border-left: 1px solid black;
+    box-sizing: border-box;
+}
+.write_journal .category,
+.write_journal .title {
+    width: calc(66.6666% + 16.6666px);
+    box-sizing: border-box;
+}
+.write_journal input {
+    width: 100%;
+    height: 70%;
+    border: none;
+}
+.write_journal textarea {
+    width: 100%;
+    border: none;
+}
+textarea:focus {
+    outline: none;
+}
+.submit_btn {
+    width: fit-content;
+    padding: 20px;
+    margin: 50px auto 50px;
+    background-color: #000;
+    color: #fff;
+}
+.write_journal .password,
+.write_journal .writer,
+.write_journal .content,
+.write_journal .title,
+.write_journal .file,
+.write_journal .category,
+.write_journal .subtitle,
+.write_journal .hashtag {
+    height: 80px;
+    padding: 16px;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+.write_journal .content {
+    display: flex;
+    align-items: flex-start;
+    height: auto;
+}
+.write_journal .file,
+.write_journal .subtitle {
+    flex-wrap: nowrap;
+}
+
+@media (max-width: 834px) {
+    .write_journal .password,
+    .write_journal .writer,
+    .write_journal .title,
+    .write_journal .file,
+    .write_journal .category,
+    .write_journal .subtitle,
+    .write_journal .hashtag {
+        height: 58px;
+        flex-wrap: nowrap;
+    }
+    .write_journal .writer,
+    .write_journal .password {
+        width: 100%;
+        border-left: 0px;
+    }
+    .write_journal .category,
+    .write_journal .title {
+        width: 100%;
+    }
+}

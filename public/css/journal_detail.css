@@ -1,0 +1,25 @@
+.detail_journal .content {
+    background-color: #e8e8e8;
+    height: 300px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+.detail_journal .j_img {
+    height: 800px;
+    background-color: #e8e8e8;
+}
+.detail_journal > div {
+    width: 100%;
+}
+.detail_journal > .side_p h4 {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.detail_journal > .side_p > div {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+}

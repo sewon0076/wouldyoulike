@@ -1,0 +1,19 @@
+<body>
+    <main class="detail_journal">
+        <div class="j_img"><img src="<%= row.img %>" alt="" /></div>
+        <div class="j_title">
+            <h2><%= row.title %></h2>
+        </div>
+        <div class="side_p">
+            <h4><%= row.subtitle %></h4>
+            <pre class="content"><%= row.content %></pre>
+            <div>
+                <p><%= row.hashtag %></p>
+            </div>
+        </div>
+        <div class="btn_wrap">
+            <div class="btn"><input type="submit" value="MODIFY" onclick="javascript:location.href='/modifyJournal?num=<%= row.num %>'" /></div>
+            <div class="btn"><input type="submit" value="DELETE" onclick="javascript:location.href='/deleteJournal?num=<%= row.num %>'" /></div>
+        </div>
+    </main>
+</body>
