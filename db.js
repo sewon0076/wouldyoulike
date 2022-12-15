@@ -4,6 +4,8 @@ var connection = mysql.createConnection({
     user: "root",
     password: "1234",
     database: "wouldyoulike",
+    multipleStatements:true,//데이터 여러개 넣는것
+
 });
 
 //thumnail==================================
@@ -24,7 +26,7 @@ function insertJournal(img, title, subtitle, writer, category, password, content
     );
 }
 function getJournal(callback) {
-    connection.query("SELECT * FROM wouldyou_journal ORDER BY num desc", (err, rows) => {
+    connection.query("SELECT * FROM wouldyou_journal ORDER BY num desc;" + , (err, rows) => {
         if (err) throw err;
         callback(rows);
     });
