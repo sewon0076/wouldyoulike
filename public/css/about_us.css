@@ -1,37 +1,43 @@
 /* ==========================sec1 */
-main.about {
-    position: relative;
-}
-.about .sec1 {
-    position: relative;
-    top: 0;
-    width: 100%;
-    background-image: url(../img/magazine.png);
-    background-size: cover;
-}
-.about .fixed {
+.mainPage_wrap.fixed {
     position: fixed;
+}
+.circle_wrap {
+    width: fit-content;
+    display: flex;
+    gap: 5px;
+}
+.circle_wrap > span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #060606;
+}
+main.mainPage {
+    position: relative;
+}
+.mainPage .sec1 {
+    position: relative;
     top: 0;
     width: 100%;
 }
-.about .wrap {
+.mainPage .sec1.fixed {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+}
+.mainPage .sec1 {
+    border-bottom: 1px solid #060606;
+    box-sizing: border-box;
+}
+.mainPage .sec1_wrap {
     box-sizing: border-box;
     width: 100%;
-    height: 1000px;
-    position: relative;
+    height: 900px;
     overflow: hidden;
 }
-.about .sec1 > .wrap > h1 {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 50px;
-    text-align: center;
-    padding-top: 40px;
-}
-.about #spaceship {
+
+.mainPage #spaceship {
     position: absolute;
     bottom: -300px;
     left: calc(50% - 75px);
@@ -43,9 +49,163 @@ main.about {
     width: 281.75px;
     height: 601px;
     margin: 0 auto;
+    z-index: 99999;
     /* transition: 1s; */
 }
-.about .box {
+.mainPage .intro_wrap {
+    border-bottom: 1px solid #060606;
+}
+.mainPage .sec1_wrap h3 {
+    line-height: 50px;
+}
+.mainPage .main_sec1_content {
     width: 100%;
-    height: 3000px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.main_sec1_content .left {
+    width: calc(100% - (33.3333% - 16.6666px));
+    height: 100%;
+    position: relative;
+}
+.main_sec1_content .left > div {
+    height: calc(850px / 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main_sec1_content .left > .middle {
+    border-top: 1px solid #060606;
+    border-bottom: 1px solid #060606;
+}
+.main_sec1_content .left h1 {
+    font-size: 80px;
+    font-weight: 800;
+}
+.main_sec1_content .left p {
+    margin-top: 25px;
+}
+.main_sec1_content .right {
+    width: calc(33.3333% - 16.6666px);
+    border-left: 1px solid #060606;
+    box-sizing: border-box;
+}
+/* ========sec2=========================main_about */
+
+.mainPage .sec2 {
+    position: relative;
+    height: 500px;
+    background-color: #fbf6f0;
+    border-bottom: 1px solid #060606;
+    box-sizing: border-box;
+}
+.mainPage .sec2_wrap {
+    height: 100%;
+}
+/* .mainPage .sec2.absolute {
+    top: 900px;
+    position: absolute;
+} */
+.mainPage .sec2_wrap > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+.mainPage .sec2 .circle_wrap {
+    width: 100%;
+    justify-content: right;
+}
+.mainPage .about_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.mainPage .about_content > div {
+    width: calc(33.3333% - 16.6666px);
+}
+/* ================sec3 */
+.mainPage .sec3 {
+    height: auto;
+}
+.mainPage .sec3 .top {
+    display: flex;
+    justify-content: space-between;
+}
+.mainPage .sec3 .bottom {
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    height: auto;
+    margin: 10vh 0;
+}
+.mainPage .sec3 .swiper {
+    overflow: visible;
+}
+.mainPage .sec3 .swiper-slide {
+    width: fit-content;
+}
+.mainPage .sec3 .journal {
+    display: table;
+    width: 320px;
+    height: auto;
+    position: relative;
+}
+.sec3 .journal:hover > .journal_front {
+    border: none;
+    background-color: #ff8671;
+    transform: translate3d(-10%, 20%, 0) rotate(-10deg);
+    transition: transform 0.5s;
+}
+.sec3 .journal:hover > .journal_back {
+    transform: translate3d(10%, -50%, 0) rotate(10deg);
+    transition: transform 0.5s;
+}
+.mainPage .sec3 .journal h4 {
+    width: fit-content;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #060606;
+}
+.mainPage .sec3 .journal p {
+    font-size: 90%;
+}
+.sec3 .journal_front {
+    width: 100%;
+    padding-top: 100%;
+    background-color: #fffefc;
+    border: 1px solid #060606;
+    box-sizing: border-box;
+    position: relative;
+    transition: transform 0.5s;
+}
+.sec3 .journal_back {
+    width: 100%;
+    padding-top: 100%;
+    background-color: aqua;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform 0.5s;
+}
+.mainPage .sec3 .journal_front > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    padding: 25px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+}
+.mainPage .box {
+    width: 100%;
+    height: 200vh;
+    background-color: rgb(14, 125, 125);
 }
