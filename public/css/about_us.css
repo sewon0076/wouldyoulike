@@ -13,6 +13,26 @@
     border-radius: 50%;
     background-color: #060606;
 }
+.plus{
+    width:20px;
+    height:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.plus>span{
+    display: block;
+    width:100%;
+    height:2px;
+    background-color: #060606;
+}
+.plus>span:nth-child(2){
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:  translateY(-50%) translateX(-50%) rotate(90deg);
+}
 main.mainPage {
     position: relative;
 }
@@ -86,7 +106,7 @@ main.mainPage {
     margin-top: 25px;
 }
 .main_sec1_content .right {
-    width: calc(33.3333% - 16.6666px);
+    /* width: calc(33.3333% - 16.6666px); */
     border-left: 1px solid #060606;
     box-sizing: border-box;
 }
@@ -123,12 +143,13 @@ main.mainPage {
     justify-content: space-between;
     align-items: flex-end;
 }
-.mainPage .about_content > div {
+/* .mainPage .about_content > div {
     width: calc(33.3333% - 16.6666px);
-}
+} */
 /* ================sec3 */
 .mainPage .sec3 {
     height: auto;
+    border-bottom: 1px solid #060606;
 }
 .mainPage .sec3 .top {
     display: flex;
@@ -137,7 +158,7 @@ main.mainPage {
 .mainPage .sec3 .bottom {
     width: 100%;
     display: flex;
-    gap: 25px;
+    /* gap: 25px; */
     height: auto;
     margin: 10vh 0;
 }
@@ -181,6 +202,12 @@ main.mainPage {
     position: relative;
     transition: transform 0.5s;
 }
+.sec3 .journal_front .top {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .sec3 .journal_back {
     width: 100%;
     padding-top: 100%;
@@ -204,8 +231,45 @@ main.mainPage {
     top: 0;
     left: 0;
 }
+
+/* =============== */
+.mainPage .sec4 .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #060606;
+    box-sizing: border-box;
+}
+.mainPage .sec4 .top h2{
+    line-height: 50px;
+}
 .mainPage .box {
     width: 100%;
     height: 200vh;
     background-color: rgb(14, 125, 125);
+}
+.mainPage .sec4 .bottom{
+    display: flex;
+    height:fit-content;
+    border-bottom:1px solid #060606;
+}
+.mainPage .sec4 .counter_wrap{
+    width:calc(100% - (33.3333% - 16.66666px));
+}
+.mainPage .sec4 .counter_list{
+    border-left:1px solid #060606;
+    box-sizing: border-box;
+}
+.mainPage .c_list_tap{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #060606;
+    box-sizing: border-box;
+}
+.mainPage .c_list_tap:last-child{
+    border-bottom: none;
+
+}
+.mainPage .c_list_tap p{
+    line-height:80px;
 }

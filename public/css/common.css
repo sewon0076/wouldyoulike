@@ -62,6 +62,9 @@ body {
     padding: 50px;
     box-sizing: border-box;
 }
+.width_3{
+    width:calc(33.3333% - 16.6666px);
+}
 #left_line {
     width: 1px;
     height: 100vh;
