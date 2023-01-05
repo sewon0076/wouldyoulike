@@ -13,25 +13,25 @@
     border-radius: 50%;
     background-color: #060606;
 }
-.plus{
-    width:20px;
-    height:20px;
+.plus {
+    width: 20px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
-.plus>span{
+.plus > span {
     display: block;
-    width:100%;
-    height:2px;
+    width: 100%;
+    height: 2px;
     background-color: #060606;
 }
-.plus>span:nth-child(2){
+.plus > span:nth-child(2) {
     position: absolute;
-    top:50%;
-    left:50%;
-    transform:  translateY(-50%) translateX(-50%) rotate(90deg);
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) rotate(90deg);
 }
 main.mainPage {
     position: relative;
@@ -152,25 +152,21 @@ main.mainPage {
     border-bottom: 1px solid #060606;
 }
 .mainPage .sec3 .top {
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 .mainPage .sec3 .bottom {
     width: 100%;
-    display: flex;
-    /* gap: 25px; */
-    height: auto;
-    margin: 10vh 0;
-}
-.mainPage .sec3 .swiper {
-    overflow: visible;
 }
 .mainPage .sec3 .swiper-slide {
-    width: fit-content;
+    width: fit-content !important;
+    padding: 100px 0;
+    box-sizing: border-box;
 }
 .mainPage .sec3 .journal {
     display: table;
-    width: 320px;
+    width: 290px;
     height: auto;
     position: relative;
 }
@@ -202,8 +198,8 @@ main.mainPage {
     position: relative;
     transition: transform 0.5s;
 }
-.sec3 .journal_front .top {
-    width:100%;
+.sec3 .journal_front .top_title {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -233,14 +229,14 @@ main.mainPage {
 }
 
 /* =============== */
-.mainPage .sec4 .top{
+.mainPage .sec4 .top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #060606;
     box-sizing: border-box;
 }
-.mainPage .sec4 .top h2{
+.mainPage .sec4 .top h2 {
     line-height: 50px;
 }
 .mainPage .box {
@@ -248,28 +244,72 @@ main.mainPage {
     height: 200vh;
     background-color: rgb(14, 125, 125);
 }
-.mainPage .sec4 .bottom{
+.mainPage .sec4 .bottom {
     display: flex;
-    height:fit-content;
-    border-bottom:1px solid #060606;
+    height: fit-content;
+    border-bottom: 1px solid #060606;
 }
-.mainPage .sec4 .counter_wrap{
-    width:calc(100% - (33.3333% - 16.66666px));
+.mainPage .sec4 .counter_wrap {
+    width: calc(100% - (33.3333% - 16.66666px));
 }
-.mainPage .sec4 .counter_list{
-    border-left:1px solid #060606;
+.mainPage .sec4 .counter_list {
+    border-left: 1px solid #060606;
     box-sizing: border-box;
 }
-.mainPage .c_list_tap{
+.mainPage .c_list_tap {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #060606;
     box-sizing: border-box;
 }
-.mainPage .c_list_tap:last-child{
+.mainPage .c_list_tap:last-child {
     border-bottom: none;
-
 }
-.mainPage .c_list_tap p{
-    line-height:80px;
+.mainPage .c_list_tap p {
+    line-height: 80px;
+}
+/* =======================sec5 */
+.mainPage .sec5 {
+    border-bottom: 1px solid #060606;
+}
+.mainPage .sec5_wrap {
+    display: flex;
+}
+.mainPage .sec5_wrap > div {
+    width: 50%;
+}
+.mainPage .sec5_wrap .left {
+    display: flex;
+    justify-content: space-between;
+}
+.mainPage .sec5_wrap .left .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.mainPage .sec5_wrap li {
+    height: 80px;
+}
+
+.mainPage .sec5_wrap .right {
+    border-left: 1px solid #060606;
+    box-sizing: border-box;
+}
+.mainPage .sec5_wrap .right li {
+    border-bottom: 1px solid #060606;
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.mainPage .sec5_wrap .right li:last-child {
+    border: none;
+}
+.mainPage .sec5_wrap .commu_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mainPage .sec5_wrap .commu_title p {
+    font-size: 90%;
 }
