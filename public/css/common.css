@@ -54,11 +54,11 @@ body {
     padding: 0 16px;
     box-sizing: border-box;
 }
-.p50 {
+.p20 {
     padding: 0 50px;
     box-sizing: border-box;
 }
-.p50all {
+.p20all {
     padding: 50px;
     box-sizing: border-box;
 }
