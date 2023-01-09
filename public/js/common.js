@@ -33,3 +33,16 @@ function scrollBtn() {
         top_btn.classList.remove("active");
     }
 }
+let cate_btn = document.querySelector('.cate_btn');
+let mobile_gnb = document.querySelector('.m_wrap');
+function click_cate(){
+    cate_btn.addEventListener('click',()=>{
+        cate_btn.classList.toggle('active');
+        if(cate_btn.classList.contains('active')){
+            mobile_gnb.classList.add('active')
+        }else{
+            mobile_gnb.classList.remove('active')
+        }
+    });
+};
+click_cate();
