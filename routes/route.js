@@ -8,13 +8,13 @@ const router = express.Router();
 const path = require("path");
 const db = require("./../db.js");
 
-router.get("/", (req, res) => {
+router.get("/journal", (req, res) => {
     db.getJournalBest((rows) => {
-        res.render("wouldyou", { rows: rows }); //ejs의 rows를 받아서 rows라는 이름으로 보낸다
+        res.render("journal", { rows: rows }); //ejs의 rows를 받아서 rows라는 이름으로 보낸다
     });
 });
-router.get("/about_us", (req, res) => {
-    res.render("about_us");
+router.get("/", (req, res) => {
+    res.render("mainPage");
 });
 // ==================uploading journal=================
 const upload = multer({

@@ -1,51 +1,162 @@
-.main .sec1 {
-    border-bottom: 1px solid black;
-}
-.main_wrap {
-    padding: 85px 0;
-}
-.main_img {
+.journalPage .sec1 {
     width: 100%;
-    padding-top: 41.72622%;
-    background-image: url(../img/main.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: 1s;
-}
-.main .sec1 h3 {
-    text-align: center;
-    margin-bottom: 50px;
-    line-height: 50px;
-    padding: 0 20px;
+    border-bottom: 1px solid black;
     box-sizing: border-box;
 }
-.main .sec1_wrap {
-    padding-bottom: 100px;
-    box-sizing: border-box;
-}
-.main .sec1_wrap > a {
+.journalPage .sec1_wrap {
     display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
+    width: 100%;
+    height: calc(100vh - 170px);
+}
+.journalPage .sec1_wrap .left {
+    width: calc(100% - 33.3333%);
+    height: 100%;
+    position: relative;
+}
+.journalPage .sec1_wrap .left .wrap {
+    width: 100%;
+    height: 100%;
+}
+.journalPage .sec1_wrap .left .wrap > div {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    height: 33.3333%;
+}
+.journalPage .sec1_wrap .left .middle {
+    border-top: 1px solid #060606;
+    border-bottom: 1px solid #060606;
     box-sizing: border-box;
+}
+.journalPage .sec1_wrap .left .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.journalPage .sec1_wrap .left .bottom h3 {
+    text-align: right;
+}
+.mainJ_wrap {
+    position: absolute;
+    top: 7%;
+    right: 10%;
+    width: 320px;
+    height: auto;
+    /* background-color: #129ed7; */
+}
+.mainJ_1,
+.mainJ_2 {
+    width: 100%;
+    padding-top: 130%;
+    box-sizing: border-box;
+    position: relative;
+}
+.mainJ_1 {
+    transform: translate3d(0, 0, 0) rotate(-20deg);
+}
+.mainJ_2 {
+    transform: translate3d(-70%, -50%, 0) rotate(20deg);
+}
+.mainJ_1 > div,
+.mainJ_2 > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.mainJ_1 img,
+.mainJ_2 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+.mainJ_1 h2,
+.mainJ_2 h2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+/* .journalPage .sec1_wrap .circle_wrap {
     width: fit-content;
-    align-items: center;
-    margin: 0 auto;
-}
-.main .sec1_wrap > a > p {
-    color: #bbbbbb;
-    font-size: 24px;
-    line-height: 50px;
-    margin-right: 20px;
+    margin-bottom: 25px;
+} */
+
+.journalPage .sec1_wrap .right h5,
+.journalPage .sec1_wrap .right h2 {
     text-align: center;
+    color: #fff;
 }
-.main .sec1_wrap > a > div {
-    width: 12px;
-}
-.main .sec1_wrap > a > div > .btn_r {
-    background-image: url(../img/btn_r_grey.png);
+.journalPage .sec1_wrap .right .italic {
+    color: #fff;
 }
 
+.ufo_banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 33.3333%;
+    height: 100%;
+    border-left: 1px solid #060606;
+    box-sizing: border-box;
+    background-color: #060606;
+}
+.ufo_banner .img_wrap {
+    position: relative;
+    width: 100%;
+    height: 55%;
+}
+.ufo_banner #hand {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    margin: 0 auto;
+}
+.ufo_banner #ufo {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    animation-name: ufo;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.ufo_banner .color_btn {
+    border: 1px solid #84d7d4;
+    background-color: #84d7d4;
+}
+.ufo_banner .color_btn:hover {
+    border: 1px solid #fff;
+    background-color: #fff;
+}
+/* .journalPage .sec1_wrap .right .color_btn:hover > p {
+    color: #84d7d4;
+} */
+.ufo_banner .color_btn p {
+    letter-spacing: -10%;
+    color: #060606;
+}
+@keyframes ufo {
+    from {
+        bottom: 55%;
+    }
+    to {
+        bottom: 10%;
+    }
+}
+.ufo_banner.mobile {
+    display: none;
+}
 /* ====================sec2=============================== */
 .j_title {
     height: 80px;
@@ -60,11 +171,7 @@
     display: block;
 }
 .journals_wrap {
-    padding: 50px 0 0;
     width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    /* background-color: #bbbbbb; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -264,94 +371,7 @@
     background-image: url(../img/latest6.jpg);
     background-position: center bottom;
 }
-/* ====================sec4=============================== */
-.main .sec4 {
-    width: 100%;
-}
-.apod_img {
-    width: 100%;
-    height: 760px;
-}
-/* .apod_wrap{
-    width: 100%;
-    height: 760px;
-} */
 
-.main .swiper-slide {
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-}
-
-
-
-.main .swiper {
-    margin-left: auto;
-    margin-right: auto;
-}
-/* .swiper-button-next,
-.swiper-button-prev {
-    color: black;
-    width: calc(var(--swiper-navigation-size) / 44 * 27);
-    height: var(--swiper-navigation-size);
-} */
-.main .swiper-horizontal > .swiper-pagination-bullets,
-.main .swiper-pagination-bullets.swiper-pagination-horizontal,
-.main .swiper-pagination-custom,
-.main .swiper-pagination-fraction {
-    bottom: 25px;
-}
-.main .swiper-pagination-bullet {
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid black;
-    opacity: 1;
-}
-.main .swiper-pagination-bullet-active {
-    background-color: black;
-}
-.main .sec4_wrap {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-.main .sec4_wrap > div {
-    width: 50%;
-    padding: 0 25px;
-    box-sizing: border-box;
-}
-.main .sec4_wrap > div > a {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    line-height: 80px;
-    align-items: center;
-}
-.main .sec4_wrap_l {
-    border-right: 1px solid black;
-    box-sizing: border-box;
-}
-.main .sec4_wrap > div > a > div {
-    width: 12px;
-}
-.main .btn_r {
-    width: 100%;
-    padding-top: 161.19403%;
-    background-size: cover;
-    background-image: url(../img/btn_r.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-}
 /* ============================================sec5========================== */
 .main .sec5 {
     /* position: absolute; */
@@ -431,6 +451,14 @@ h2.delivery {
 }
 
 @media (max-width: 1570px) {
+    .mainJ_wrap {
+        position: absolute;
+        top: 12%;
+        right: 10%;
+        width: 280px;
+        height: auto;
+        /* background-color: #129ed7; */
+    }
     /* .journals_wrap h5 {
         font-size: 22px;
     } */
@@ -443,6 +471,19 @@ h2.delivery {
     }
 }
 @media (max-width: 1200px) {
+    .journalPage .sec1_wrap .left {
+        width: 50%;
+    }
+    .journalPage .sec1_wrap .right {
+        width: 50%;
+    }
+    .mainJ_wrap {
+        top: 20%;
+        right: 7%;
+        width: 230px;
+        height: auto;
+        /* background-color: #129ed7; */
+    }
     .journals_wrap h5 {
         font-size: 20px;
     }
@@ -462,9 +503,6 @@ h2.delivery {
     }
     .main_wrap {
         padding: 50px 0;
-    }
-    .sec1 h3 {
-        margin-bottom: 35px;
     }
     .search_wrap {
         width: auto;
@@ -499,8 +537,115 @@ h2.delivery {
     .bottom_p {
         padding-bottom: 20px;
     }
-    .sec1_wrap {
+    .journalPage .sec1_wrap .left .middle {
+        border-top: none;
+        border-bottom: none;
+        box-sizing: border-box;
+    }
+    .journalPage .sec1 h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    .journalPage .sec1 .title {
+        margin-top: 40px;
+    }
+    .journalPage .sec1_wrap .left .bottom {
+        align-items: center;
+        margin-top: -20px;
+    }
+    .journalPage .sec1_wrap .left .bottom h3 {
+        text-align: center;
+    }
+    .mainJ_wrap {
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 230px;
+        height: auto;
+        /* background-color: #129ed7; */
+    }
+    .journalPage .desktop {
+        display: none;
+    }
+    .journalPage .mobile {
+        display: block;
+    }
+    .mainJ_1 {
+        transform: translate3d(40%, 0, 0) rotate(-15deg);
+    }
+    .mainJ_2 {
+        transform: translate3d(-40%, -42%, 0) rotate(15deg);
+    }
+    .journalPage .sec1_wrap {
+        height: calc(100vh - 50px);
+    }
+    .journalPage .sec1_wrap .left {
+        width: 100%;
+    }
+    .journalPage .sec1_wrap .right {
+        display: none;
+    }
+    .journalPage .ufo_banner.mobile {
+        display: block;
+        width: 100%;
+        height: 60vh;
+        border-left: none;
+        background-color: transparent;
+    }
+    .ufo_banner > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: #060606;
         padding-bottom: 40px;
+    }
+    .ufo_banner .img_wrap {
+        position: relative;
+        width: 60%;
+        height: 60%;
+        box-sizing: border-box;
+    }
+    .ufo_banner.mobile h2 {
+        font-size: 28px;
+    }
+    .ufo_banner.mobile h2,
+    .ufo_banner.mobile .italic,
+    .ufo_banner.mobile h5 {
+        color: #fff;
+        text-align: center;
+    }
+    .ufo_banner #hand {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        margin: 0 auto;
+    }
+    .ufo_banner #ufo {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        animation-name: ufo;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    .ufo_banner .color_btn {
+        margin-top: 10px;
+    }
+    @keyframes ufo {
+        from {
+            bottom: 55%;
+        }
+        to {
+            bottom: 10%;
+        }
     }
     .j_title {
         height: 58px;
@@ -520,18 +665,7 @@ h2.delivery {
     .j_title span {
         display: none;
     }
-    .sec1 h3 {
-        font-size: 16px;
-        line-height: 1.6;
-        margin-bottom: 35px;
-    }
-    .main_img {
-        padding-top: 113.4892%;
-        background-image: url(../img/main_mobile.png);
-    }
-    .main_wrap {
-        padding: 50px 0;
-    }
+
     .search_wrap {
         width: auto;
         border: none;
@@ -670,6 +804,21 @@ h2.delivery {
     .main .email {
         margin: 25px auto 0;
         width: 80%;
+    }
+}
+@media (max-width: 600px) {
+    .mainJ_wrap {
+        top: 20%;
+        right: 12%;
+        width: 200px;
+        height: auto;
+        /* background-color: #129ed7; */
+    }
+    .mainJ_1 {
+        transform: translate3d(0, 0, 0) rotate(-15deg);
+    }
+    .mainJ_2 {
+        transform: translate3d(-90%, -42%, 0) rotate(15deg);
     }
 }
 @media (max-width: 430px) {

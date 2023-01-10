@@ -3,6 +3,15 @@ const He = window.innerHeight;
 window.addEventListener("scroll", (event) => {
     scrollBtn();
 });
+function noSearch() {
+    if (location.pathname == "/journal") {
+        let header = document.querySelector(".header_wrap");
+        header.classList.add("noSearch");
+    } else {
+        return;
+    }
+}
+noSearch();
 //top버튼 클릭 구문
 let top_btn = document.querySelector("#top_btn");
 function topClick() {
@@ -33,16 +42,17 @@ function scrollBtn() {
         top_btn.classList.remove("active");
     }
 }
-let cate_btn = document.querySelector('.cate_btn');
-let mobile_gnb = document.querySelector('.m_wrap');
-function click_cate(){
-    cate_btn.addEventListener('click',()=>{
-        cate_btn.classList.toggle('active');
-        if(cate_btn.classList.contains('active')){
-            mobile_gnb.classList.add('active')
-        }else{
-            mobile_gnb.classList.remove('active')
+
+let cate_btn = document.querySelector(".cate_btn");
+let mobile_gnb = document.querySelector(".m_wrap");
+function click_cate() {
+    cate_btn.addEventListener("click", () => {
+        cate_btn.classList.toggle("active");
+        if (cate_btn.classList.contains("active")) {
+            mobile_gnb.classList.add("active");
+        } else {
+            mobile_gnb.classList.remove("active");
         }
     });
-};
+}
 click_cate();

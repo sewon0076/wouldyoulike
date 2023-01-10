@@ -22,61 +22,61 @@ function timer() {
     minutes.innerHTML = dMinute;
     seconds.innerHTML = dSeconds;
 }
-//main image change event
-let mainImgW = document.querySelector(".main_img_wrap");
-let mainImg = document.querySelector(".main_img");
-let imgWidth = mainImgW.offsetWidth;
-let imgHeight = mainImgW.offsetHeight;
-console.log(imgWidth);
-console.log(imgHeight);
-mainImgW.addEventListener("mousemove", imgChange);
-mainImgW.addEventListener("mouseleave", imageNoChange);
-function imgChange(e) {
-    let x = e.offsetX;
-    let y = e.offsetY;
-    if (x > 0 && x <= imgWidth * 0.5) {
-        if (y > 0 && y <= imgHeight * 0.5) {
-            mainImg.classList.add("rightTop");
-            mainImg.classList.remove("rightBottom");
-            mainImg.classList.remove("leftTop");
-            mainImg.classList.remove("leftBottom");
-        } else {
-            mainImg.classList.remove("rightTop");
-        }
-        if (y >= imgHeight * 0.5 && y < imgHeight) {
-            mainImg.classList.add("rightBottom");
-            mainImg.classList.remove("rightTop");
-            mainImg.classList.remove("leftTop");
-            mainImg.classList.remove("leftBottom");
-        } else {
-            mainImg.classList.remove("rightBottom");
-        }
-    } else if (x > imgWidth * 0.5 && x <= imgWidth) {
-        if (y > 0 && y <= imgHeight * 0.5) {
-            mainImg.classList.add("leftTop");
-            mainImg.classList.remove("rightBottom");
-            mainImg.classList.remove("rightTop");
-            mainImg.classList.remove("leftBottom");
-        } else {
-            mainImg.classList.remove("leftTop");
-        }
-        if (y >= imgHeight * 0.5 && y < imgHeight) {
-            mainImg.classList.add("leftBottom");
-            mainImg.classList.remove("rightBottom");
-            mainImg.classList.remove("rightTop");
-            mainImg.classList.remove("leftTop");
+// //main image change event
+// let mainImgW = document.querySelector(".main_img_wrap");
+// let mainImg = document.querySelector(".main_img");
+// let imgWidth = mainImgW.offsetWidth;
+// let imgHeight = mainImgW.offsetHeight;
+// console.log(imgWidth);
+// console.log(imgHeight);
+// mainImgW.addEventListener("mousemove", imgChange);
+// mainImgW.addEventListener("mouseleave", imageNoChange);
+// function imgChange(e) {
+//     let x = e.offsetX;
+//     let y = e.offsetY;
+//     if (x > 0 && x <= imgWidth * 0.5) {
+//         if (y > 0 && y <= imgHeight * 0.5) {
+//             mainImg.classList.add("rightTop");
+//             mainImg.classList.remove("rightBottom");
+//             mainImg.classList.remove("leftTop");
+//             mainImg.classList.remove("leftBottom");
+//         } else {
+//             mainImg.classList.remove("rightTop");
+//         }
+//         if (y >= imgHeight * 0.5 && y < imgHeight) {
+//             mainImg.classList.add("rightBottom");
+//             mainImg.classList.remove("rightTop");
+//             mainImg.classList.remove("leftTop");
+//             mainImg.classList.remove("leftBottom");
+//         } else {
+//             mainImg.classList.remove("rightBottom");
+//         }
+//     } else if (x > imgWidth * 0.5 && x <= imgWidth) {
+//         if (y > 0 && y <= imgHeight * 0.5) {
+//             mainImg.classList.add("leftTop");
+//             mainImg.classList.remove("rightBottom");
+//             mainImg.classList.remove("rightTop");
+//             mainImg.classList.remove("leftBottom");
+//         } else {
+//             mainImg.classList.remove("leftTop");
+//         }
+//         if (y >= imgHeight * 0.5 && y < imgHeight) {
+//             mainImg.classList.add("leftBottom");
+//             mainImg.classList.remove("rightBottom");
+//             mainImg.classList.remove("rightTop");
+//             mainImg.classList.remove("leftTop");
 
-            console.log(x, y);
-        } else {
-            mainImg.classList.remove("leftBottom");
-        }
-    }
-    // return;
-}
-function imageNoChange(e) {
-    console.log("leave");
-    mainImg.classList.remove("rightBottom");
-    mainImg.classList.remove("rightTop");
-    mainImg.classList.remove("leftTop");
-    mainImg.classList.remove("leftBottom");
-}
+//             console.log(x, y);
+//         } else {
+//             mainImg.classList.remove("leftBottom");
+//         }
+//     }
+//     // return;
+// }
+// function imageNoChange(e) {
+//     console.log("leave");
+//     mainImg.classList.remove("rightBottom");
+//     mainImg.classList.remove("rightTop");
+//     mainImg.classList.remove("leftTop");
+//     mainImg.classList.remove("leftBottom");
+// }

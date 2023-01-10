@@ -2,14 +2,14 @@
 /* .mainPage{
     background-color: #fbf6f0;
 } */
-.p20 {
+/* .p20 {
     padding: 0 20px;
     box-sizing: border-box;
 }
 .p20all {
     padding: 20px;
     box-sizing: border-box;
-}
+} */
 .mainPage_wrap.fixed {
     position: fixed;
 }
@@ -72,12 +72,12 @@ main.mainPage {
     position: relative;
 }
 /* ==================sec1 */
-.mainPage .sec1:hover,
+/* .mainPage .sec1:hover,
 .mainPage .sec2:hover,
 .mainPage .sec7:hover,
 .mainPage .sec8:hover {
     cursor: url(../img/cursor_ufo.png) 20 30, auto;
-}
+} */
 .mainPage .sec1 .sec1_wrap .mobile {
     display: none;
 }
@@ -171,10 +171,6 @@ main.mainPage {
     text-align: right;
 }
 
-.mainPage .sec1 h1 {
-    font-size: 60px;
-    font-weight: 800;
-}
 /* .mainPage .sec1_wrap .right {
     height: calc(100% - 50px);
     display: flex;
@@ -355,6 +351,7 @@ input:focus {
     height: auto;
 }
 .mainPage .sec3 .journal_front > div {
+    padding: 20px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -641,10 +638,6 @@ input:focus {
     justify-content: flex-end;
 }
 @media (max-width: 1200px) {
-    .mainPage .sec1 h1 {
-        font-size: 50px;
-        font-weight: 800;
-    }
     .mainPage .sec4 {
         height: auto;
         border-bottom: 1px solid #060606;
@@ -780,10 +773,6 @@ input:focus {
             height: 15;
         }
         /* ======== */
-        .mainPage .sec1 h1 {
-            font-size: 40px;
-            font-weight: 800;
-        }
         .mainPage .sec1_wrap .left h5.mobile {
             font-size: 20px;
         }

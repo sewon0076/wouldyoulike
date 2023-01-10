@@ -1,0 +1,154 @@
+<body>
+    <main class="journalPage">
+        <section class="sec1 side_p">
+            <div class="sec1_wrap">
+                <div class="left">
+                    <div class="mainJ_wrap">
+                        <div class="mainJ_1">
+                            <div class="wrap">
+                                <h2></h2>
+                                <img src="img/main_J1.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="mainJ_2">
+                            <div class="wrap">
+                                <h2></h2>
+                                <img src="img/main_J2.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap">
+                        <div class="top p20all">
+                            <div class="title">
+                                <h1>WOULD <span class="italic bold">YOU</span>&nbsp LIKE</h1>
+                                <h1>JOURNALS?</h1>
+                            </div>
+                        </div>
+                        <div class="middle p20all">
+                            <h3 class="bold desktop">The MORE YOU KNOW</h3>
+                        </div>
+                        <div class="bottom p20all">
+                            <h3 class="bold mobile">The MORE YOU KNOW,</h3>
+                            <h3 class="bold">
+                                MORE AMAZING<br />
+                                MYSTERY OF THE UNIVERSE
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="ufo_banner right p20all desktop">
+                    <h2>SHARE YOUR <span class="italic">UNIVERSE</span></h2>
+                    <div class="img_wrap">
+                        <img id="hand" src="img/hand.png" alt="" />
+                        <img src="img/ufo.png" alt="" id="ufo" />
+                    </div>
+                    <h5 class="kr">
+                        수습 기자단이 되어 여러분들의 우주를 공유해주세요!<br />
+                        우주에 대한 지식을 나누고 싶으신 분들<br />글 쓰는 것을 좋아하시는 분들<br />
+                        무엇보다 우주를 사랑하는 분들을 기다립니다.
+                    </h5>
+                    <div class="color_btn">
+                        <p class="kr bold">수습기자단 신청하러 가기</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="ufo_banner mobile side_p">
+            <div class="p20all">
+                <h2>SHARE YOUR <span class="italic">UNIVERSE</span></h2>
+                <div class="img_wrap">
+                    <img id="hand" src="img/hand.png" alt="" />
+                    <img src="img/ufo.png" alt="" id="ufo" />
+                </div>
+                <h5 class="kr">
+                    수습 기자단이 되어 여러분들의 우주를 공유해주세요!<br />
+                    우주에 대한 지식을 나누고 싶으신 분들<br />글 쓰는 것을 좋아하시는 분들<br />
+                    무엇보다 우주를 사랑하는 분들을 기다립니다.
+                </h5>
+                <div class="color_btn">
+                    <p class="kr bold">수습기자단 신청하러 가기</p>
+                </div>
+            </div>
+        </div>
+        <section class="sec2 bottom_p">
+            <div class="j_title">
+                <h2>BEST JOURNALS</h2>
+                <span></span>
+                <h2>BY CATEGORIES</h2>
+            </div>
+            <div class="side_p">
+                <div class="journals_wrap p20all">
+                    <% for(i=0; i<6; i++){%>
+                    <div href="" onclick="javascript:location.href='/journalDetail?num=<%= rows[i].num %>'">
+                        <h5 class="inner_p"><%= rows[i].category %></h5>
+                        <h4 class="inner_p"><%= rows[i].title %></h4>
+                        <div class="j_prefer inner_p"><span class="view">203</span><span class="like">122</span></div>
+                        <div class="j_text inner_p">
+                            <p><%= rows[i].subtitle %></p>
+                        </div>
+                        <div class="j_content">
+                            <div class="j_img"><img src="<%= rows[i].img %>" alt="" /></div>
+                            <div class="j_r">
+                                <div></div>
+                                <div class="hashtag"><span><%= rows[i].hashtag %></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }; %>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec3 bottom_p">
+            <div class="j_title">
+                <h2>LATEST JOURNALS</h2>
+            </div>
+            <div class="side_p">
+                <div class="journals_wrap p20all">
+                    <% for(i=6; i<12; i++){%>
+                    <div href="" onclick="javascript:location.href='/journalDetail?num=<%= rows[i].num %>'">
+                        <h5 class="inner_p"><%= rows[i].category %></h5>
+                        <h4 class="inner_p"><%= rows[i].title %></h4>
+                        <div class="j_prefer inner_p"><span class="view">203</span><span class="like">122</span></div>
+                        <div class="j_text inner_p">
+                            <p><%= rows[i].subtitle %></p>
+                        </div>
+                        <div class="j_content">
+                            <div class="j_img"><img src="<%= rows[i].img %>" alt="" /></div>
+                            <div class="j_r">
+                                <div></div>
+                                <div class="hashtag"><span><%= rows[i].hashtag %></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }; %>
+                </div>
+            </div>
+        </section>
+        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2393" frameborder="0" width="100%" height="auto"></iframe>
+    </main>
+</body>
+<!-- <script src="js/common.js"></script> -->
+<!-- <script src="JS/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
+
+<!-- Initialize Swiper -->
+<!-- <script>
+    var swiper = new Swiper(".apod_img", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    });
+</script> -->
