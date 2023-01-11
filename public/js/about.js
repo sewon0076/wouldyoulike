@@ -121,30 +121,64 @@ function timer_Meteor() {
     minutes.innerHTML = dMinute;
     seconds.innerHTML = dSeconds;
 }
+function hoverChange(){
+    let change_btn = document.querySelectorAll('.change_btn');
+    let iconP = document.querySelectorAll('.iconP');
+    for(let i=0; i<change_btn.length; i++){
+        
+        change_btn[i].addEventListener("mouseover",(e)=>{
+            for(let j=0; j<iconP.length; j++){
+                if (i == j) {
+                    iconP[j].classList.remove("plus");
+                    iconP[j].classList.add("direction");
+                } else {
+                    iconP[j].classList.add("plus");
+                    iconP[j].classList.remove("direction");
+                }
+            }
+        }
+        )
+       
+        
+    };
+    for(let i=0; i<change_btn.length; i++){
+        change_btn[i].addEventListener("mouseout",(e)=>{
+            for(let j=0; j<iconP.length; j++){
+                iconP[j].classList.add("plus");
+                iconP[j].classList.remove("direction");
+            }
+        }
+        )
+       
+        
+    };
+
+};
+hoverChange();
 function sec4_tap() {
     let taps = document.querySelectorAll(".c_list_tap");
     let contents = document.querySelectorAll(".counter_wrap");
+    let iconP = document.querySelectorAll('.iconP');
     for (let i = 0; i < taps.length; i++) {
         taps[i].addEventListener("click", (e) => {
             for (j = 0; j < contents.length; j++) {
                 console.log(i);
                 contents[j].classList.remove("active");
                 taps[j].classList.remove("active");
+                for(let p=0;p<iconP.length; p++){
+                    if (i == j) {
+                        iconP[j].classList.remove("plus");
+                        iconP[j].classList.add("direction");
+                    } else {
+                        iconP[j].classList.add("plus");
+                        iconP[j].classList.remove("direction");
+                    }
+                }
             }
             e.currentTarget.classList.toggle("active");
             contents[i].classList.add("active");
-            // for (let j = 0; j < contents.length; j++) {
-            //     if (i == j) {
-            //         e.currentTarget.classList.toggle("active");
-            //         contents[j].classList.add("active");
-            //     } else {
-            //         console.log("i=" + i + "j=" + j);
-            //         // e.currentTarget.classList.toggle("active");
-            //         contents[j].classList.remove("active");
-            //         taps[j].classList.remove("active");
-            //     }
-            // }
         });
     }
 }
 sec4_tap();
+//due to mouseout event it disturb click event
