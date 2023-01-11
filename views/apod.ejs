@@ -1,0 +1,83 @@
+<body>
+    <main class="apodPage">
+        <section class="sec1">
+            <div class="sec1_wrap">
+                <div class="title side_p">
+                    <div class="p20">
+                        <h2>APOD</h2>
+                        <div class="circle_wrap"><span></span></div>
+                    </div>
+                </div>
+                <div class="sec1_swiper_wrap side_p">
+                    <div class="apodName side_p">
+                        <h3 class="bold p20">PICTURES of THIS WEEK</h3>
+                    </div>
+                    <div class="swiper apod_img">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/apod230107.png" alt="" /></div>
+                            <div class="swiper-slide"><img src="img/apod230106.jpg" alt="" /></div>
+                            <div class="swiper-slide"><img src="img/apod230105.png" alt="" /></div>
+                            <div class="swiper-slide"><img src="img/apod230104.png" alt="" /></div>
+                            <div class="swiper-slide"><img src="img/apod230103.jpg" alt="" /></div>
+                            <div class="swiper-slide"><img src="img/apod230102.jpg" alt="" /></div>
+                            <div class="swiper-slide"><img src="img/apod230101.jpg" alt="" /></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sec2">
+            <div class="sec2_wrap side_p">
+                <div class="p20all">
+                    <div class="circle_wrap"><span class="circle"></span><span></span></div>
+                    <div class="about_content">
+                        <h2>WHAT IS APOD?</h2>
+                        <div class="width_3">
+                            <h5 class="p20">
+                                APOD(<span class="italic">Astronomy Picture of the Day</span>) 은 NASA와 미국 국립과학재단, 미시간 공과대학교(MTU)가
+                                제공하는 웹사이트로 우주 및 천체 사진을 다루고 있다. 1995년 6월 16일 첫 게시물을 시작으로, 첫날 조회수는 14회에
+                                불과했으나 2012년에는 누적 10억 회를 기록했다. 현재 우주라이크에서 공식적으로 번역해서 제공하는 한국어 버전을 포함해
+                                21개국 언어판으로 번역되어 제공되고 있다. <span class="italic">(설명 출처 : Wikipedia)</span>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sec3">
+            <div class="sec3_wrap">
+                <div class="title side_p">
+                    <div>
+                        <div class="circle_wrap p20"><span></span><span></span><span></span></div>
+                        <div class="width_3 p20">
+                            <h2>VIEW MORE APOD</h2>
+                            <div class="direction"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".apod_img", {
+        slidesPerView: 1,
+        // spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    });
+</script>

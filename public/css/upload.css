@@ -1,13 +1,13 @@
 .write_journal {
-    margin: 0;
-    padding-top: 180px;
+    border-bottom: 1px solid #060606;
+    box-sizing: border-box;
 }
 .write_journal .journals_wrap {
     display: block;
     margin-top: 50px;
 }
 .write_table {
-    border: 1px solid black;
+    border: 1px solid #060606;
     border-bottom: 0px;
 }
 .write_journal .j_title {
@@ -25,12 +25,12 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: left;
 }
 .write_journal .writer,
 .write_journal .password {
     width: calc(33.3333% - 16.6666px);
-    border-left: 1px solid black;
+    border-left: 1px solid #060606;
     box-sizing: border-box;
 }
 .write_journal .category,
@@ -39,7 +39,7 @@
     box-sizing: border-box;
 }
 .write_journal input {
-    width: 100%;
+    width: 60%;
     height: 70%;
     border: none;
 }
@@ -54,7 +54,7 @@ textarea:focus {
     width: fit-content;
     padding: 20px;
     margin: 50px auto 50px;
-    background-color: #000;
+    background-color: #060606;
     color: #fff;
 }
 .write_journal .password,
@@ -67,7 +67,7 @@ textarea:focus {
 .write_journal .hashtag {
     height: 80px;
     padding: 16px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #060606;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -76,12 +76,24 @@ textarea:focus {
     display: flex;
     align-items: flex-start;
     height: auto;
+    flex-wrap: nowrap;
+}
+.write_journal .content > h4 {
+    line-height: 1;
 }
 .write_journal .file,
 .write_journal .subtitle {
     flex-wrap: nowrap;
 }
-
+.write_journal .hashtag {
+    flex-direction: row;
+}
+.write_journal .btn {
+    margin: 20px auto;
+}
+.write_journal .btn input {
+    width: 100%;
+}
 @media (max-width: 834px) {
     .write_journal .password,
     .write_journal .writer,

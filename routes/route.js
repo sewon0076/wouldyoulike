@@ -16,6 +16,12 @@ router.get("/journal", (req, res) => {
 router.get("/", (req, res) => {
     res.render("mainPage");
 });
+router.get("/apod", (req, res) => {
+    res.render("apod");
+});
+router.get("/contact_us", (req, res) => {
+    res.render("contact_us");
+});
 // ==================uploading journal=================
 const upload = multer({
     storage: multer.diskStorage({
