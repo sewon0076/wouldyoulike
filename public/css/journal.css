@@ -161,14 +161,31 @@
 .j_title {
     height: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     border-bottom: 1px solid black;
 }
-.j_title span {
-    width: 17px;
-    height: 2px;
-    display: block;
+.j_title.j_t_2 {
+    justify-content: space-between;
+}
+.filter {
+    display: flex;
+    gap: 25px;
+}
+.filter > div {
+    position: relative;
+    padding-right: 50px;
+    box-sizing: border-box;
+}
+.filter span {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #060606;
+    border-bottom: 2px solid #060606;
+    transform: translateY(-80%) rotate(45deg);
 }
 .journals_wrap {
     width: 100%;
@@ -201,10 +218,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.j_prefer {
-    border-bottom: 1px solid black;
-    box-sizing: border-box;
-}
+
 .j_prefer span {
     line-height: 50px;
 }
@@ -229,6 +243,25 @@
     height: 400px;
     flex-wrap: wrap;
 }
+.j_r {
+    width: 45%;
+}
+.j_r > div {
+    width: 100%;
+    height: 50%;
+}
+.j_r > div:nth-child(1) {
+    border-bottom: 1px solid #060606;
+    box-sizing: border-box;
+}
+.hashtag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hashtag > span {
+    text-align: center;
+}
 .j_img {
     width: 55%;
     height: 100%;
@@ -247,207 +280,34 @@
     width: auto;
     height: 100%;
 }
-/* #best1 {
-    background-image: url(../img/dwarf\ planet.jpg);
-    background-position: right -202px top 0;
-}
-#best2 {
-    background-image: url(../img/moon-surface.jpg);
-    background-position: right top;
-}
-#best3 {
-    background-image: url(../img/nightsky.jpg);
-    background-position: center bottom;
-}
-#best4 {
-    background-image: url(../img/under\ the\ moon.jpg);
-    background-position: right top;
-}
-#best5 {
-    background-image: url(../img/melancholia.jpg);
-    background-position: left 0px top 0;
-}
-#best6 {
-    background-image: url(../img/earth\ and\ moon.jpg);
-    background-position: center top;
-} */
-.j_r {
-    width: 45%;
-}
-.j_r > div {
-    width: 100%;
-    height: 200px;
-}
-.j_r > div:nth-child(1) {
+.j_prefer {
+    display: flex;
+    justify-content: right;
+    align-items: center;
     border-bottom: 1px solid black;
     box-sizing: border-box;
+    gap: 10px;
 }
-.hashtag {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 40px;
+span.viewImg,
+span.heartImg {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-/* =====================sec3================ */
-.timer_wrap {
-    width: 100%;
-    height: 250px;
-    background-image: url(../img/timer.png);
-    background-position: center bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 25px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-}
-.timer_wrap > p {
-    color: #fff;
-    text-align: center;
-    font-weight: 900;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-.times_wrap {
-    width: 100%;
-    max-width: 1020px;
-}
-.times {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 25px;
-    box-sizing: border-box;
-}
-.times > div {
-    width: calc(25% - 18.75px);
-    padding: 25px;
-    box-sizing: border-box;
-    border: 1px solid #fff;
-}
-.times > div > span {
-    margin-bottom: 25px;
-    font-size: 25px;
-    display: block;
-    text-align: center;
-    font-weight: 900;
-    color: rgba(0, 0, 0);
-    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
-}
-.times > div > p {
-    text-align: center;
-    font-size: 50px;
-    color: #fff;
-    font-weight: 900;
-}
-
-/* ====================sec3=============================== */
-#latest1 {
-    background-image: url(../img/latest1.png);
-}
-#latest2 {
-    background-image: url(../img/latest2.jpg);
-    background-position: center center;
-}
-#latest3 {
-    background-image: url(../img/latest3.jpg);
-    background-position: center center;
-}
-#latest4 {
-    background-image: url(../img/latest4.jpg);
-}
-#latest5 {
-    background-image: url(../img/latest5.png);
-    background-position: center center;
-}
-#latest6 {
-    background-image: url(../img/latest6.jpg);
-    background-position: center bottom;
-}
-
-/* ============================================sec5========================== */
-.main .sec5 {
-    /* position: absolute; */
-    width: 100%;
-    padding: 400px 0 280px;
-    background-image: url(../img/galaxy_bg.png);
-    background-attachment: fixed;
-    background-position: center center;
-}
-
-.main .sec5 h2 {
-    color: #fff;
-    margin-bottom: 55px;
-}
-.main .sec5 p {
-    color: #fff;
-    text-align: center;
-    line-height: 1.5;
-}
-.main .delivery_wrap {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    align-items: center;
-}
-.main .delivery_content {
+    width: 30px;
     height: fit-content;
+    justify-content: center;
+    align-items: center;
 }
-.main .submit {
-    margin: 25px auto 0;
-    width: 400px;
-    line-height: 55px;
-    text-align: center;
-    color: #fff;
-    background-color: #129ed7;
+span.heartImg {
+    width: 26px;
+    z-index: 10;
 }
-.main .email {
-    margin: 25px auto;
-    width: 400px;
-    background-color: #fff;
-    padding: 0 25px;
-    box-sizing: border-box;
-    line-height: 55px;
-}
-.main .sec5 input {
-    border: transparent;
+span.viewImg > img,
+span.heartImg > img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
-input:focus {
-    outline: none;
-}
-h2.delivery {
-    margin-top: 200px;
-}
-.main .sec5_img_wrap {
-    width: 364px;
-    height: 595.327103px;
-    /* margin: 0 auto; */
-}
-.main .sec5_img {
-    width: 100%;
-    height: 100%;
-    background-image: url(../img/astronaut_delivery.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: 1.2s;
-}
-.main .sec5_img:hover {
-    background-image: url(../img/astronaut_delivery_2.png);
-    transition: 1.2s;
-}
-.main .sec5 span {
-    display: block;
-    color: #fff;
-    text-align: center;
+.viewCount,
+.heartCount {
+    color: #c2c2c2;
 }
 
 @media (max-width: 1570px) {

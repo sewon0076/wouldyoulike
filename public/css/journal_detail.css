@@ -23,3 +23,7 @@
     padding: 25px;
     box-sizing: border-box;
 }
+.detail_journal .content {
+    width: 100%;
+    overflow-y: scroll;
+}

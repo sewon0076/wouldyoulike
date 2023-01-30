@@ -2,12 +2,12 @@
     <main class="detail_journal">
         <input type="hidden" name="" value="<%= row.num %>" />
         <div class="j_img"><img src="<%= row.img %>" alt="" /></div>
-        <div class="j_title">
-            <h2><%= row.title %></h2>
+        <div class="j_title side_p">
+            <h2 class="p25"><%= row.title %></h2>
         </div>
         <div class="side_p">
             <h4><%= row.subtitle %></h4>
-            <pre class="content"><%= row.content %></pre>
+            <pre class="content p50all"><%= row.content %></pre>
             <div>
                 <p><%= row.hashtag %></p>
             </div>

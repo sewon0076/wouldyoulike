@@ -2,11 +2,11 @@
 /* .mainPage{
     background-color: #fbf6f0;
 } */
-/* .p20 {
+/* .p50 {
     padding: 0 20px;
     box-sizing: border-box;
 }
-.p20all {
+.p50all {
     padding: 20px;
     box-sizing: border-box;
 } */
@@ -860,7 +860,7 @@ input:focus {
         .mainPage .sec5_wrap .right .mobile h2 {
             line-height: 50px;
         }
-        .mainPage .sec5_wrap .right ul li.p20all {
+        .mainPage .sec5_wrap .right ul li.p50all {
             height: 50px;
             padding: 5px 20px;
         }
