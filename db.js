@@ -25,7 +25,7 @@ function insertJournal(img, title, subtitle, writer, category, password, content
     );
 }
 function getJournal(callback) {
-    connection.query("SELECT * FROM wouldyou_journal ORDER BY num desc;", (err, rows) => {
+    connection.query("SELECT * FROM wouldyou_journal ORDER BY num desc", (err, rows) => {
         if (err) throw err;
         callback(rows);
     });
@@ -55,6 +55,7 @@ function getJournalbyid(num, callback) {
 //아이디가 일치하는 부분을 update할 내용 내보내기
 function modify_J(num, callback) {
     connection.query(`SELECT * FROM wouldyou_journal where num=${num}`, (err, row) => {
+        console.log("update=" + num);
         if (err) throw err;
         callback(row);
     });
@@ -62,9 +63,9 @@ function modify_J(num, callback) {
 
 //아이디가 일치하는 부분을 update한 내용 내보내기
 function updateJournal(num, img, title, subtitle, writer, category, password, content, hashtag, callback) {
-    console.log("db" + num);
+    console.log("update send =" + num);
     connection.query(
-        `UPDATE wouldyou_journal set img='${img}',title='${title}',subtitle='${subtitle}',writer='${writer}',category='${category}',password=${password},content='${content}',hashtag='${hashtag}' where num=${num}`,
+        `UPDATE wouldyou_journal set  create_time=now(), img='${img}',title='${title}',subtitle='${subtitle}',writer='${writer}',category='${category}',password=${password},content='${content}',hashtag='${hashtag}' where num=${num}`,
         (err) => {
             if (err) throw err;
             callback();

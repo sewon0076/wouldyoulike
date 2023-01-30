@@ -81,7 +81,7 @@ router.get("/modifyJournal", (req, res) => {
 // 업데이트 된 내용 내보내기=================================================
 router.post("/m_journal", upload.single("journal_img"), (req, res) => {
     let param = JSON.parse(JSON.stringify(req.body));
-    let num = req.query.num;
+    let num = param["num"];
     let img = "uploads/" + req.file.filename;
     let title = param["title"];
     let subtitle = param["subtitle"];
@@ -91,14 +91,14 @@ router.post("/m_journal", upload.single("journal_img"), (req, res) => {
     let content = param["content"];
     let hashtag = param["hashtag"];
     db.updateJournal(num, img, title, subtitle, writer, category, password, content, hashtag, () => {
-        res.redirect("/journal_list");
+        res.redirect("/journal");
     });
 });
 //===============================아이디가 일치하면 삭제하기
 router.get("/deleteJournal", (req, res) => {
     let num = req.query.num;
     db.deleteJournal(num, () => {
-        res.redirect("/journal_list");
+        res.redirect("/journal");
     });
 });
 module.exports = router;
