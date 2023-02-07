@@ -52,12 +52,12 @@ router.post("/u_journal", upload.single("journal_img"), (req, res) => {
     let hashtag = param["hashtag"];
 
     db.insertJournal(img, title, subtitle, writer, category, password, content, hashtag, () => {
-        res.redirect("/journal_list");
+        res.redirect("/journal");
     });
 });
-router.get("/journal_list", (req, res) => {
+router.get("/journal", (req, res) => {
     db.getJournal((rows) => {
-        res.render("journal_list", { rows: rows }); //ejs의 rows를 받아서 rows라는 이름으로 보낸다
+        res.render("journal", { rows: rows }); //ejs의 rows를 받아서 rows라는 이름으로 보낸다
     });
 });
 //detail upload=====================================

@@ -25,7 +25,7 @@ function insertJournal(img, title, subtitle, writer, category, password, content
     );
 }
 function getJournal(callback) {
-    connection.query("SELECT * FROM wouldyou_journal ORDER BY num desc", (err, rows) => {
+    connection.query("SELECT * FROM wouldyou_journal ORDER BY num", (err, rows) => {
         if (err) throw err;
         callback(rows);
     });
