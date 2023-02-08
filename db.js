@@ -55,7 +55,6 @@ function getJournalbyid(num, callback) {
 //아이디가 일치하는 부분을 update할 내용 내보내기
 function modify_J(num, callback) {
     connection.query(`SELECT * FROM wouldyou_journal where num=${num}`, (err, row) => {
-        console.log("update=" + num);
         if (err) throw err;
         callback(row);
     });
@@ -106,6 +105,54 @@ function loginAccount(name, password, callback) {
         console.log(password + "db");
     });
 }
+function insertNotice(img, title, writer, category, password, content, callback) {
+    connection.query(
+        `INSERT INTO upload_notice(create_time, img, title, writer, category, password, content) values (NOW(), '${img}','${title}','${writer}','${category}','${password}','${content}')`,
+        (err) => {
+            if (err) throw err;
+            callback();
+        }
+    );
+}
+function getNotice(callback) {
+    connection.query("SELECT * FROM upload_notice ORDER BY num desc", (err, rows) => {
+        if (err) throw err;
+        callback(rows);
+    });
+}
+function getNoticebyid(num, callback) {
+    //한줄을 다 불러올때는 from + 'table 이름" + 없음
+    connection.query(`SELECT * FROM upload_notice where num='${num}'`, (err, row) => {
+        console.log(num);
+        if (err) throw err;
+        callback(row);
+    });
+}
+function modify_N(num, callback) {
+    connection.query(`SELECT * FROM upload_notice where num=${num}`, (err, row) => {
+        if (err) throw err;
+        callback(row);
+    });
+}
+
+//아이디가 일치하는 부분을 update한 내용 내보내기
+function updateNotice(num, img, title, writer, category, password, content, callback) {
+    console.log("update send =" + num);
+    connection.query(
+        `UPDATE upload_notice set  create_time=now(), img='${img}',title='${title}',writer='${writer}',category='${category}',password=${password},content='${content}' where num=${num}`,
+        (err) => {
+            if (err) throw err;
+            callback();
+        }
+    );
+}
+//아이디가 일치하면 삭제하기
+function deleteNotice(num, callback) {
+    connection.query(`DELETE from upload_notice WHERE num=${num}`, (err) => {
+        if (err) throw err;
+        callback();
+    });
+}
 // //받아온 회원정보를 login_complete 창에입력할때
 // function loginAccount(name) {
 //     connection.query(`insert into account (name) values ('${name}')`, (err) => {
@@ -122,4 +169,7 @@ module.exports = {
     updateJournal,
     getJournalBest,
     deleteJournal,
+    insertNotice,
+    getNotice,
+    getNoticebyid,
 };

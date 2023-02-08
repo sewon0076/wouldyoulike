@@ -201,15 +201,23 @@ header {
     font-weight: 700;
 }
 .gnb li > a + span {
-    display: none;
+    width: 0px;
+
+    overflow: hidden;
+    transition: 0.5s;
 }
 .gnb li:hover > a + span {
-    display: inline-block;
+    width: fit-content;
+    overflow: visible;
+    transition: 0.5s;
     padding-left: 15px;
     box-sizing: border-box;
 }
 .gnb li:hover > a + span > a {
     font-size: 14px;
+}
+.gnb li > a + span > a {
+    font-size: 0px;
 }
 .search_wrap {
     display: flex;

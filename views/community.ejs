@@ -1,0 +1,72 @@
+<body>
+    <main class="commuPage">
+        <section class="sec1 side_p">
+            <div class="sec1_wrap">
+                <div>
+                    <div class="top">
+                        <div class="title p50all">
+                            <h2>COMMUNITY</h2>
+                        </div>
+                        <div class="options width_3 p50all">
+                            <div class="option active">
+                                <p class="bold">ALL</p>
+                            </div>
+                            <div class="option">
+                                <p class="bold">PUBLIC</p>
+                            </div>
+                            <div class="option">
+                                <p class="bold">ADMINISTAR</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commu_content p50all">
+                        <% rows.forEach((row)=>{%>
+                        <div class="list active" onclick="javascript:location.href='/noticeDetail?num=<%= row.num %>'">
+                            <input type="hidden" name="" value="<%= row.category %>" class="commu_cate" />
+                            <div>
+                                <div class="top_title">
+                                    <h4 class="bold"><%= row.title %></h4>
+                                    <div class="plus"><span></span><span></span></div>
+                                </div>
+                                <p><%= row.content %></p>
+                            </div>
+                        </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+    const options = [...document.querySelectorAll(".option")];
+    const cate = document.querySelectorAll(".commu_cate");
+    options.forEach((option) => {
+        option.addEventListener("click", () => {
+            setActive(option);
+        });
+    });
+    //형제들을 찾아서 모두 지워주고 본인만 잡는 구문
+    const setActive = (el) => {
+        [...el.parentElement.children].forEach((sib) => sib.classList.remove("active"));
+        el.classList.add("active");
+        for (i = 0; i < cate.length; i++) {
+            if (el.childNodes[1].innerText == "ALL") {
+                cate[i].parentNode.classList.add("active");
+            } else if (el.childNodes[1].innerText == "PUBLIC") {
+                if (cate[i].defaultValue == "public") {
+                    cate[i].parentNode.classList.add("active");
+                } else if (cate[i].defaultValue !== "public") {
+                    cate[i].parentNode.classList.remove("active");
+                }
+            } else if (el.childNodes[1].innerText == "ADMINISTAR") {
+                if (cate[i].defaultValue == "private") {
+                    cate[i].parentNode.classList.add("active");
+                } else if (cate[i].defaultValue !== "private") {
+                    cate[i].parentNode.classList.remove("active");
+                }
+            }
+        }
+        // }
+    };
+</script>

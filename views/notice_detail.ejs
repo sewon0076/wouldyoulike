@@ -1,0 +1,17 @@
+<body>
+    <main class="detail_journal notice">
+        <input type="hidden" name="" value="<%= row.num %>" />
+        <div class="j_img"><img src="<%= row.img %>" alt="" /></div>
+        <div class="j_title side_p">
+            <h2 class="p25"><%= row.title %></h2>
+            <h4 class="p25 commu_cate"><%= row.category %></h4>
+        </div>
+        <div class="side_p">
+            <pre class="content p50all"><%= row.content %></pre>
+        </div>
+        <div class="btn_wrap">
+            <div class="btn"><input type="submit" value="MODIFY" onclick="javascript:location.href='/modifyNotice?num=<%= row.num %>'" /></div>
+            <div class="btn"><input type="submit" value="DELETE" onclick="javascript:location.href='/deleteNotice?num=<%= row.num %>'" /></div>
+        </div>
+    </main>
+</body>

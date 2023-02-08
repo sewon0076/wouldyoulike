@@ -57,6 +57,7 @@ router.post("/u_journal", upload.single("journal_img"), (req, res) => {
 });
 router.get("/journal", (req, res) => {
     db.getJournal((rows) => {
+        console.log(num);
         res.render("journal", { rows: rows }); //ejs의 rows를 받아서 rows라는 이름으로 보낸다
     });
 });
@@ -90,7 +91,7 @@ router.post("/m_journal", upload.single("journal_img"), (req, res) => {
     let password = param["password"];
     let content = param["content"];
     let hashtag = param["hashtag"];
-    db.updateJournal(num, img, title, subtitle, writer, category, password, content, hashtag, () => {
+    db.updateJournal(img, title, subtitle, writer, category, password, content, hashtag, () => {
         res.redirect("/journal");
     });
 });
@@ -101,4 +102,35 @@ router.get("/deleteJournal", (req, res) => {
         res.redirect("/journal");
     });
 });
+//==========================community
+router.get("/upload_notice", (req, res) => {
+    res.render("upload_notice");
+});
+router.post("/u_notice", upload.single("notice_img"), (req, res) => {
+    let param = JSON.parse(JSON.stringify(req.body));
+    // let num = req.query.num;
+    let img = "uploads/" + req.file.filename;
+    let title = param["title"];
+    let writer = param["writer"];
+    let category = param["category"];
+    let password = param["password"];
+    let content = param["content"];
+
+    db.insertNotice(img, title, writer, category, password, content, () => {
+        res.redirect("/community");
+    });
+});
+router.get("/community", (req, res) => {
+    db.getNotice((rows) => {
+        res.render("community", { rows: rows }); //ejs의 rows를 받아서 rows라는 이름으로 보낸다
+    });
+});
+router.get("/noticeDetail", (req, res) => {
+    let num = req.query.num;
+    //getMemobyId는 그냥 지어준 이름
+    db.getNoticebyid(num, (row) => {
+        res.render("notice_detail", { row: row[0] });
+    });
+});
+
 module.exports = router;
