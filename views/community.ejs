@@ -20,13 +20,14 @@
                         </div>
                     </div>
                     <div class="commu_content p50all">
-                        <% rows.forEach((row)=>{%>
+                        <% rows.forEach((row)=>{%><% let regisDate = row.create_time.getDate(); %> <% let regisMonth = row.create_time.getMonth()+1;
+                        %> <% let regisYear = row.create_time.getFullYear(); %>
                         <div class="list active" onclick="javascript:location.href='/noticeDetail?num=<%= row.num %>'">
                             <input type="hidden" name="" value="<%= row.category %>" class="commu_cate" />
                             <div>
-                                <div class="top_title">
+                                <div class="noti_title">
+                                    <p><%= regisYear %>.<%= regisMonth %>.<%= regisDate %></p>
                                     <h4 class="bold"><%= row.title %></h4>
-                                    <div class="plus"><span></span><span></span></div>
                                 </div>
                                 <p><%= row.content %></p>
                             </div>

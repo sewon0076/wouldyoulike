@@ -120,6 +120,12 @@ function getNotice(callback) {
         callback(rows);
     });
 }
+function getNotice_main(callback) {
+    connection.query("SELECT * FROM upload_notice ORDER BY num desc limit 5", (err, rows) => {
+        if (err) throw err;
+        callback(rows);
+    });
+}
 function getNoticebyid(num, callback) {
     //한줄을 다 불러올때는 from + 'table 이름" + 없음
     connection.query(`SELECT * FROM upload_notice where num='${num}'`, (err, row) => {
@@ -136,10 +142,10 @@ function modify_N(num, callback) {
 }
 
 //아이디가 일치하는 부분을 update한 내용 내보내기
-function updateNotice(num, img, title, writer, category, password, content, callback) {
+function updateNotice(num, writer, title, category, password, content, img, callback) {
     console.log("update send =" + num);
     connection.query(
-        `UPDATE upload_notice set  create_time=now(), img='${img}',title='${title}',writer='${writer}',category='${category}',password=${password},content='${content}' where num=${num}`,
+        `UPDATE upload_notice set  create_time = now(), writer='${writer}',title='${title}',category='${category}',password='${password}',content='${content}',img='${img}' where num=${num}`,
         (err) => {
             if (err) throw err;
             callback();
@@ -172,4 +178,8 @@ module.exports = {
     insertNotice,
     getNotice,
     getNoticebyid,
+    updateNotice,
+    modify_N,
+    deleteNotice,
+    getNotice_main,
 };

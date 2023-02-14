@@ -50,7 +50,7 @@
 }
 .commu_content > .list > div {
     position: absolute;
-    padding: 30px;
+    padding: 25px;
     box-sizing: border-box;
     top: 0;
     left: 0;
@@ -60,10 +60,31 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.commu_content .top_title {
+.commu_content .noti_title:after {
+    content: "";
+    display: block;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    height: 1px;
+    background-color: #060606;
+    margin-top: 10px;
+}
+
+.commu_content .noti_title {
+    width: fit-content;
+    max-width: 100%;
+}
+.commu_content .noti_title p {
+    font-size: 12px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+.commu_content .noti_title h4 {
+    width: 100%;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .commu_content p {
     font-size: 16px;
@@ -74,6 +95,20 @@
 }
 .commu_content .list:hover {
     background-color: #afe9bd;
+}
+.commu_content .list:hover .noti_title:after {
+    animation-name: line;
+    animation-duration: 0.8s;
+    animation-duration: leaner;
+    animation-iteration-count: 1;
+}
+@keyframes line {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 100%;
+    }
 }
 .detail_journal.notice .j_title {
     width: 100%;

@@ -13,8 +13,13 @@ router.get("/journal", (req, res) => {
         res.render("journal", { rows: rows }); //ejs의 rows를 받아서 rows라는 이름으로 보낸다
     });
 });
+// router.get("/", (req, res) => {
+//     res.render("mainPage");
+// });
 router.get("/", (req, res) => {
-    res.render("mainPage");
+    db.getNotice_main((rows) => {
+        res.render("mainPage", { rows: rows });
+    });
 });
 router.get("/apod", (req, res) => {
     res.render("apod");
@@ -132,5 +137,31 @@ router.get("/noticeDetail", (req, res) => {
         res.render("notice_detail", { row: row[0] });
     });
 });
-
+// ==============================
+router.get("/modifyNotice", (req, res) => {
+    let num = req.query.num;
+    db.modify_N(num, (row) => {
+        res.render("modify_notice", { row: row[0] });
+    });
+});
+// 업데이트 된 내용 내보내기=================================================
+router.post("/m_notice", upload.single("notice_img"), (req, res) => {
+    let param = JSON.parse(JSON.stringify(req.body));
+    let num = param["num"];
+    let img = "uploads/" + req.file.filename;
+    let title = param["title"];
+    let writer = param["writer"];
+    let category = param["category"];
+    let password = param["password"];
+    let content = param["content"];
+    db.updateNotice(num, writer, title, category, password, content, img, () => {
+        res.redirect("/community");
+    });
+});
+router.get("/deleteNotice", (req, res) => {
+    let num = req.query.num;
+    db.deleteNotice(num, () => {
+        res.redirect("/community");
+    });
+});
 module.exports = router;

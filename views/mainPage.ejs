@@ -376,11 +376,10 @@
                         </div>
                         <div>
                             <ul class="date_wrap">
-                                <li class="p50all"><p class="bold">23 / 01 / 25</p></li>
-                                <li class="p50all"><p class="bold">23 / 01 / 15</p></li>
-                                <li class="p50all"><p class="bold">23 / 01 / 11</p></li>
-                                <li class="p50all"><p class="bold">23 / 01 / 09</p></li>
-                                <li class="p50all"><p class="bold">23 / 01 / 01</p></li>
+                                <% rows.forEach((row)=>{%><% let regisDate = row.create_time.getDate(); %> <% let regisMonth =
+                                row.create_time.getMonth()+1; %> <% let regisYear = row.create_time.getFullYear(); %>
+                                <li class="p50all"><p class="bold"><%= regisYear %>.<%= regisMonth %>.<%= regisDate %></p></li>
+                                <% }); %>
                             </ul>
                         </div>
                     </div>
@@ -393,41 +392,15 @@
                             </div>
                         </div>
                         <ul>
-                            <li class="p50all">
+                            <% rows.forEach((row)=>{%>
+                            <li class="p50all" onclick="javascript:location.href='/noticeDetail?num=<%= row.num %>'">
                                 <div class="commu_title">
-                                    <p>제 11회 우주라이크 수습 기자단 모집 공고</p>
+                                    <p><%= row.title %></p>
                                     <div class="commu_info"></div>
                                 </div>
                                 <div class="plus"><span></span><span></span></div>
                             </li>
-                            <li class="p50all">
-                                <div class="commu_title">
-                                    <p>제 11회 우주라이크 수습 기자단 모집 공고</p>
-                                    <div class="commu_info"></div>
-                                </div>
-                                <div class="plus"><span></span><span></span></div>
-                            </li>
-                            <li class="p50all">
-                                <div class="commu_title">
-                                    <p>제 11회 우주라이크 수습 기자단 모집 공고</p>
-                                    <div class="commu_info"></div>
-                                </div>
-                                <div class="plus"><span></span><span></span></div>
-                            </li>
-                            <li class="p50all">
-                                <div class="commu_title">
-                                    <p>제 11회 우주라이크 수습 기자단 모집 공고</p>
-                                    <div class="commu_info"></div>
-                                </div>
-                                <div class="plus"><span></span><span></span></div>
-                            </li>
-                            <li class="p50all">
-                                <div class="commu_title">
-                                    <p>제 11회 우주라이크 수습 기자단 모집 공고</p>
-                                    <div class="commu_info"></div>
-                                </div>
-                                <div class="plus"><span></span><span></span></div>
-                            </li>
+                            <% }); %>
                         </ul>
                     </div>
                 </div>
